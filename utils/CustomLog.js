@@ -10,7 +10,7 @@ class CustomLog {
 				betterLog.log(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'log');
+			CustomLog.statusCondition(DEBUG_STATUS, 'log', ...args);
 		}
 		
 		
@@ -22,7 +22,7 @@ class CustomLog {
 				betterLog.info(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'info');
+			CustomLog.statusCondition(DEBUG_STATUS, 'info', ...args);
 		}
 		
 	}
@@ -33,7 +33,7 @@ class CustomLog {
 				betterLog.warn(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'warn');
+			CustomLog.statusCondition(DEBUG_STATUS, 'warn', ...args);
 		}
 	}
 
@@ -43,7 +43,7 @@ class CustomLog {
 				betterLog.table(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'table');
+			CustomLog.statusCondition(DEBUG_STATUS, 'table', ...args);
 		}
 	}
 
@@ -53,7 +53,7 @@ class CustomLog {
 				betterLog.time(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'time');
+			CustomLog.statusCondition(DEBUG_STATUS, 'time', ...args);
 		}
 	}
 
@@ -63,7 +63,7 @@ class CustomLog {
 				betterLog.timeEnd(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'timeEnd');
+			CustomLog.statusCondition(DEBUG_STATUS, 'timeEnd', ...args);
 		}
 	}
 
@@ -73,11 +73,11 @@ class CustomLog {
 				betterLog.dir(DEBUG_STATUS, ...args);
 
 		} else {
-			CustomLog.statusCondition(DEBUG_STATUS, 'dir');
+			CustomLog.statusCondition(DEBUG_STATUS, 'dir', ...args);
 		}
 	}
 
-	static statusCondition(debugStatus, method) {
+	static statusCondition(debugStatus, method, ...args) {
 		switch (debugStatus) {
 			case 'dev':
 				if (process.env.DEBUG_LVL > 1)	

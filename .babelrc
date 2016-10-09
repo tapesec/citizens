@@ -1,0 +1,4 @@
+{
+  "presets" : ["es2015", "react"],
+  "optional": ["es7.decorators", "es7.classPropoerties", "es7.objectRestSpread"]
+}

@@ -12,9 +12,6 @@ module.exports = new Promise((resolve, reject) => {
     var JwtStrategy = require('passport-jwt').Strategy
     ,   ExtractJwt = require('./authentications/sessionExctractor');
 
-
-    konsole.log("lol");
-
     passport.use(new JwtStrategy({
         jwtFromRequest: ExtractJwt.fromSession,
         secretOrKey: process.env.SECRET_PASSPHRASE,
@@ -93,8 +90,10 @@ module.exports = new Promise((resolve, reject) => {
 
 
         resolve(app);  
-    });    
-
+    })
+    .catch((err) => {
+        konsole.warn("dev", err);    
+    });
 });
 
 

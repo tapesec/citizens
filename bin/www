@@ -4,9 +4,10 @@
  * Module dependencies.
  */
 
-var serverExpress = require('../lib/server/app');
+require("babel-register");
+var serverExpress = require('../server/app');
 
-serverExpress.then(app => {
+serverExpress.then(function(app) {
     
     var debug = require('debug')('citizens:server');
     var http = require('http');

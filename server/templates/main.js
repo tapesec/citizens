@@ -10,8 +10,7 @@ module.exports = function renderFullPage(content, preloadedState) {
                 <script>
                     window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
                 </script>
-                <script src="/static/bundle.js"></script>
-                <script src="http://localhost:8080/assets/bundle.js">
+                <script src="bundle.js"></script>
             </body>
         </html>
     `

@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Root extends React.Component {
-	
+
 		render() {
 			return (
 				<div>
-					<div>A citizen is born</div>
+					<h1>A citizen is born</h1>
 					<Link to="/page-1">Page 1</Link>
 					<Link to="/page-2">Page 2</Link>
 					{ this.props.children }

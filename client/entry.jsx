@@ -6,8 +6,7 @@ import { Provider } from 'react-redux';
 import routes from '../shared/routes';
 import configureStore from './store/configureStore.js';
 
-const preloadedState = window.__PRELOADED_STATE__;
-const store = configureStore(preloadedState);
+const store = configureStore();
 import DevTools from '../shared/containers/DevTools';
 
 render((
@@ -16,6 +15,6 @@ render((
 			<DevTools />
 			<Router children={routes} history={browserHistory} />
 		</div>
-	</Provider>), 
+	</Provider>),
   	document.getElementById('app')
 )

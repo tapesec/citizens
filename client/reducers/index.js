@@ -1,8 +1,8 @@
 import action from '../actions/';
 
-export default function(state=window.__PRELOADED_STATE__, action) {
+export default function(state, action) {
 
-	switch(action.type) {
+	switch(state, action.type) {
 		default:
 			return state;
 	}

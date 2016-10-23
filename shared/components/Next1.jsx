@@ -1,14 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-export default class Next1 extends React.Component {
-	
+class Next1 extends React.Component {
+
 	render() {
 		return (
 			<div>
-				<h1>Page 1 allllllé !</h1>
-				<p>lorem ipsum mqdjljzl </p>
+				<h1>Page 1 !</h1>
+				<p>lorem ipsum</p>
 			</div>
 		);
 	}
 }
+export default Next1;

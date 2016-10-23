@@ -6,9 +6,9 @@ import reducer from '../reducers/';
 import DevTools from '../../shared/containers/DevTools';
 
 const loggerMiddleware = createLogger()
+let preloadedState = {};
 
-
-export default function configureStore(preloadedState) {
+export default function configureStore() {
   	const store = createStore(
     	reducer,
     	preloadedState,
@@ -20,7 +20,7 @@ export default function configureStore(preloadedState) {
 			// Required! Enable Redux DevTools with the monitors you chose
 			DevTools.instrument()
 		)
-    	
+
   	);
 
   	// Hot reload reducers (requires Webpack or Browserify HMR to be enabled)

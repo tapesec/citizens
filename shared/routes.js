@@ -7,7 +7,7 @@ import Next2 from './components/Next2';
 
 export default (
 	<Route component={ Root } path="/" >
-		
+		<IndexRoute component={Next1}/>
 		<Route path="/page-1" component={Next1} />
 		<Route path="/page-2" component={Next2} />
 	</Route>

@@ -1,0 +1,20 @@
+{
+    "apps": [{
+        "name"        : "Lasalle",
+        "script"      : "bin/www",
+        "port": 3000,
+        "watch": "server",
+        "args": "--harmony",
+        "exec_mode"  : "fork_mode",
+        "env": {
+            "NODE_ENV": "development",
+            "WEB_URL": "www.citizens.io",
+            "ADMIN_MAIL": "admin@citizens.io",
+            "SECRET_PASSPHRASE": "lasalle",
+            "DEBUG_LVL": 2,
+            "JWT_SECRET_KEY": "lasalle",
+            "REDIS_HOST": "localhost",
+            "REDIS_PORT": 6379
+        }
+    }]
+}

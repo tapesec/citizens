@@ -58,7 +58,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get([constant.SIGN_IN, constant.MAIN_PAGE], function(req, res, next) {
+app.get(['/', constant.SIGN_IN, constant.MAIN_PAGE], function(req, res, next) {
     konsole.log(Boolean(req.session), req.url, 'session and url ---->');
     if (!Boolean(req.session) || !req.session.isLogIn) {
         if (req.url !== constant.SIGN_IN) {
@@ -96,7 +96,7 @@ app.get(constant.LOGOUT, (req, res) => {
     });
 });
 
-app.get([constant.SIGN_IN, constant.MAIN_PAGE], controller);
+app.get(['/', constant.SIGN_IN, constant.MAIN_PAGE], controller);
 
 //app.use('/users', users);
 

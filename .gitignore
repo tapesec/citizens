@@ -33,3 +33,4 @@ npm-debug.log
 
 # generated files
 server/public
+dump.rdb

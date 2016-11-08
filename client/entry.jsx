@@ -5,11 +5,19 @@ import { Provider } from 'react-redux';
 
 import routes from '../shared/routes';
 import configureStore from './store/configureStore.js';
-const preloadedState = window.__PRELOADED_STATE__;
+const clientPreloadedState = {
+    user: {
+        jwt: null,
+        accountName: '',
+        isLogIn: false
+    }
+};
+const preloadedState = window.__PRELOADED_STATE__ || clientPreloadedState;
+
 const store = configureStore(preloadedState);
 import DevTools from '../shared/containers/DevTools';
 
-require('!style!css!less!./main.less');
+require('./main.less');
 
 render((
     <Provider store={store}>

@@ -4,6 +4,7 @@ module.exports = function renderFullPage(content, preloadedState) {
         <html>
             <head>
                 <title>Citizen !</title>
+                <link rel='stylesheet' href='/bundle.css'>
             </head>
             <body>
                 <div class="container-fluid" id="app">${content}</div>

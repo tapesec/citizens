@@ -1,0 +1,6 @@
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.Chat {
+    @include make-md-column(9);
+}

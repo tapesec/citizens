@@ -1,0 +1,18 @@
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MessagePeriodSeparator {
+    margin: 20px 0 30px 0;
+    height: 0;
+    border-top: 1px solid $gray-light;
+    text-align: center;
+    span {
+        padding: 7px;
+        border: 1px solid $gray-light;
+        font-style: italic;
+        display: inline-block;
+        text-align: left;
+        background-color: $white;
+        margin-top: -7px;
+    }
+}

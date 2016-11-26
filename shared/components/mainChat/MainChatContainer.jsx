@@ -8,7 +8,7 @@ class MainChatContainer extends React.Component {
 
     render() {
         return (
-            <div className="MainChatContainer">
+            <div className="MainChatContainer clearfix">
                 <MenuLeft />
                 <Chat />
             </div>

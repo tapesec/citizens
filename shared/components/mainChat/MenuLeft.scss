@@ -1,0 +1,11 @@
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MenuLeft {
+    @include make-md-column(3, 0);
+    // ul.list-group {
+    //     a.list-group-item {
+    //         border: 1px solid $list-group-border;
+    //     }
+    // }
+}

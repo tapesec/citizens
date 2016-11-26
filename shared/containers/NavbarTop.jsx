@@ -20,7 +20,7 @@ class NavbarTop extends React.Component {
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="#">
-                            <span>Citizens</span>
+                            <span>Citizens </span>
                         </a>
                     </div>
                     <ul className="nav navbar-nav navbar-right">

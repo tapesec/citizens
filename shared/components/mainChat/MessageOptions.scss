@@ -1,0 +1,18 @@
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MessageOptions {
+    @include make-md-column(2);
+    top: -10px;
+    border: 1px solid $gray-light;
+    color: $gray-base;
+    padding: 0 3px;
+    border-radius: 4px;
+    background-color: $white;
+    span {
+        padding: 6px 7px;
+        &:first-child {
+            border-right: 1px solid $gray-light;
+        }
+    }
+}

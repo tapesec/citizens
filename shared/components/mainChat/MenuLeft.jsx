@@ -1,13 +1,14 @@
 import React from 'react';
+import './MenuLeft.scss';
 
 class MenuLeft extends React.Component {
 
     render() {
         return (
-            <div className="col-md-3">
+            <div className="MenuLeft">
                 <ul className="list-group">
-                    <li className="list-group-item">Alice</li>
-                    <li className="list-group-item">Bob</li>
+                    <a className="list-group-item">Alice 2</a>
+                    <a className="list-group-item">Bob</a>
                 </ul>
             </div>
         );

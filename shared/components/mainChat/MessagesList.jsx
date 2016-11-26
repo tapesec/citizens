@@ -1,15 +1,19 @@
 import React from 'react';
 
-import Message from './Message';
+import MessageGroup from './MessageGroup';
+import MessagePeriodSeparator from './MessagePeriodSeparator';
+
+import './MessageList.scss';
 
 const MessagesList = () => {
 
     return (
-        <div>
-            <Message />
-            <Message />
-            <Message />
-            <Message />
+        <div className="MessagesList">
+            <MessageGroup />
+            <MessageGroup />
+            <MessagePeriodSeparator time="Jeudi 23 décembre" />
+            <MessageGroup />
+            <MessageGroup />
         </div>
     );
 };

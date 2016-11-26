@@ -47,7 +47,7 @@ const isomorphicMiddleware = function(req, res) {
             );
 
             const finalState = store.getState();
-            console.log('test server rendering -->' + req.url);
+            konsole.log('test server rendering -->' + req.url);
             res.send(renderFullPage(content, finalState));
         } else {
             res.status(404).send('Not found');

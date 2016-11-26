@@ -17,7 +17,7 @@ const preloadedState = window.__PRELOADED_STATE__ || clientPreloadedState;
 const store = configureStore(preloadedState);
 import DevTools from '../shared/containers/DevTools';
 
-require('./main.less');
+import './main.scss';
 
 render((
     <Provider store={store}>

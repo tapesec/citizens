@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var path = require('path');
-var BUILD_DIR = path.join(__dirname, 'server/public');
+var BUILD_DIR = path.join(__dirname, 'build/server/public');
 var CLIENT = path.resolve(__dirname, 'client');
 var SHARED = path.resolve(__dirname, 'shared');
 
@@ -23,7 +23,11 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('bundle.css', { allChunks: true })
+        new ExtractTextPlugin('bundle.css', { allChunks: true }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ],
     resolve: {
         extensions: ['', '.js', '.jsx']

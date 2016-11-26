@@ -4,9 +4,7 @@
  * Module dependencies.
  */
 
-require('babel-register');
-var app = require('../server/app');
-
+var app = require('./../build/server/app.js');
 
 
 var debug = require('debug')('citizens:server');

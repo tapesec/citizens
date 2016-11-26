@@ -6,7 +6,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var RedisStore = require('connect-redis')(session);
+var redis = require('connect-redis');
+var RedisStore = redis(session);
 var bodyParser = require('body-parser');
 // var passport = require('passport');
 // var JwtStrategy = require('passport-jwt').Strategy
@@ -130,4 +131,5 @@ app.use(function(err, req, res) {
         error: {}
     });
 });
+
 module.exports = app;

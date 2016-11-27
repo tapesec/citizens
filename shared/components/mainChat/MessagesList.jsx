@@ -7,13 +7,14 @@ import './MessageList.scss';
 
 const MessagesList = () => {
 
+
     return (
         <div className="MessagesList">
-            <MessageGroup />
-            <MessageGroup />
+            <MessageGroup key={1}/>
+            <MessageGroup key={2} />
             <MessagePeriodSeparator time="Jeudi 23 décembre" />
-            <MessageGroup />
-            <MessageGroup />
+            <MessageGroup key={3}/>
+            <MessageGroup key={4}/>
         </div>
     );
 };

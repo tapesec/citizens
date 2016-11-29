@@ -11,6 +11,9 @@ import DevTools from '../../shared/containers/DevTools.jsx';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
+import Conversation from '../states/Conversation.js';
+const conversation = new Conversation().getLastMessages();
+
 /* GET home page. */
 const isomorphicMiddleware = function(req, res) {
 
@@ -28,7 +31,8 @@ const isomorphicMiddleware = function(req, res) {
                     isLogIn: req.session && req.session.jwt? true : false,
                     accountName: req.session && req.session.accountName? req.session.accountName : null,
                     jwt: req.session? req.session.jwt : null
-                }
+                },
+                ...conversation
             };
             const loggerMiddleware = createLogger();
             const store = createStore(reducer, preloadedState,

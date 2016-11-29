@@ -17,3 +17,8 @@ export const SIGN_UP = '/logout';
 export const LOGOUT = '/logout';
 export const AUTH = '/auth';
 export const MAIN_PAGE = '/dashboard';
+
+
+
+// ressources paths
+export const MESSAGES = '/messages';

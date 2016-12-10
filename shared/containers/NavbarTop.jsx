@@ -1,10 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import userSelector from '../../client/selectors/user';
+import { User } from '../../client/selectors/';
 import { logOut } from '../../client/actions/user';
 import AccountNameLabel from '../components/NavbarTop/AccountNameLabel';
-
+console.log(User, 'USER');
 class NavbarTop extends React.Component {
 
 
@@ -20,7 +20,7 @@ class NavbarTop extends React.Component {
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="#">
-                            <span>Citizens</span>
+                            <span>Citizens </span>
                         </a>
                     </div>
                     <ul className="nav navbar-nav navbar-right">
@@ -34,7 +34,7 @@ class NavbarTop extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        accountName: userSelector.getAccountName(state)
+        accountName: User.getAccountName(state)
     };
 };
 

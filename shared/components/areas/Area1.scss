@@ -1,0 +1,7 @@
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.Area1 {
+    @include make-row();
+    height: 100%;
+}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import FormLogin from '../components/FormLogin';
 import { signUp } from '../../client/actions/user';
-import userSelector from '../../client/selectors/user';
+import { User } from '../../client/selectors/';
 
 class Login extends React.Component {
 
@@ -20,7 +20,7 @@ class Login extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        isLogIn: userSelector.isLogIn(state)
+        isLogIn: User.isLogIn(state)
     };
 };
 

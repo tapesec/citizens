@@ -1,0 +1,41 @@
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MessageGroup {
+    padding: 3px 3px;
+    div.MessageLine {
+        margin-bottom: 5px;
+        &:hover {
+            background-color: $gray-lighter;
+        }
+    }
+    span.message-content, span.message-header, span.messageOptions {
+        display: block;
+        padding: 3px 3px;
+    }
+
+    span.message-header {
+        span {
+            &:last-child {
+                color: $gray-light;
+                font-style: italic;
+            }
+            &:first-child {
+                color: $gray-base;
+                font-weight: bold;
+            }
+        }
+    }
+
+    span.message-content {
+        @include make-md-column(10);
+    }
+
+    span.MessageOptions {
+        float: right;
+        width: 12%;
+    }
+
+
+
+}

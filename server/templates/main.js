@@ -7,7 +7,7 @@ module.exports = function renderFullPage(content, preloadedState) {
                 <link rel='stylesheet' href='/bundle.css'>
             </head>
             <body>
-                <div class="container-fluid" id="app">${content}</div>
+                <div class="container-fluid" style="height:100%;" id="app">${content}</div>
                 <script>
                     window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState)}
                 </script>

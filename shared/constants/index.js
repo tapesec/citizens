@@ -13,7 +13,10 @@ export const LOGOUT_ON_ERROR = 'LOGOUT_ON_ERROR';
 // functionnal view path
 export const HOME_PAGE = '/login';
 export const SIGN_IN = '/login';
-export const SIGN_UP = '/logout';
-export const LOGOUT = '/logout';
-export const AUTH = '/auth';
 export const MAIN_PAGE = '/dashboard';
+
+// ressources paths
+export const MESSAGES = '/messages';
+export const AUTH = '/auth';
+export const LOGOUT = '/logout';
+export const WIDGET_INFORMATION_PANEL = '/informationspanel';

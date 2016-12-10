@@ -11,6 +11,9 @@ import DevTools from '../../shared/containers/DevTools.jsx';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
+import Conversation from '../states/Conversation.js';
+const conversation = new Conversation().getLastMessages();
+
 /* GET home page. */
 const isomorphicMiddleware = function(req, res) {
 
@@ -28,6 +31,12 @@ const isomorphicMiddleware = function(req, res) {
                     isLogIn: req.session && req.session.jwt? true : false,
                     accountName: req.session && req.session.accountName? req.session.accountName : null,
                     jwt: req.session? req.session.jwt : null
+                },
+                pointOfInterestCreationWindow: {
+                    opened: false,
+                    widgetSelected: 'NONE',
+                    data: null,
+                    editMode: false
                 }
             };
             const loggerMiddleware = createLogger();
@@ -39,7 +48,7 @@ const isomorphicMiddleware = function(req, res) {
 
             var content = ReactDOMServer.renderToString(
                 <Provider store={store}>
-                    <div>
+                    <div style={{ height: '100%' }}>
                         <DevTools />
                         <RouterContext {...props}/>
                     </div>

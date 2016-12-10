@@ -1,3 +1,10 @@
+// Make variables and mixins available when using CSS modules.
+//@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
 .MainChatContainer {
-    border: 1px solid black;
+    @include make-md-column(12);
+    padding: 10px;
+    background-color: $white;
 }

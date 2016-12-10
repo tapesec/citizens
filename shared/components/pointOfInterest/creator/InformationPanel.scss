@@ -1,0 +1,26 @@
+.InformationPanel {
+    padding: 10px;
+
+    .radio label {
+        margin-right: 10px;
+    }
+}
+
+/** animation for POI creation container **
+.InformationPanel-enter {
+    left: -33%;
+}
+
+.InformationPanel-enter.InformationPanel-enter-active {
+    left: 0;
+    transition: left 500ms, ease-in;
+}
+
+.InformationPanel-leave {
+    left: 0;
+}
+
+.InformationPanel-leave.InformationPanel-leave-active {
+    left: -33%;
+    transition: left 300ms, ease-in;
+}*/

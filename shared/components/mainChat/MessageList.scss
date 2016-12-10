@@ -1,0 +1,9 @@
+//@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./styles/_variables.scss";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MessagesList {
+    height: 400px;
+    overflow: scroll;
+    padding: 10px;
+}

@@ -4,12 +4,20 @@ import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import routes from '../shared/routes';
-import configureStore from './store/configureStore.js';
+import configureStore from './store/configureStore';
+import { NONE } from '../shared/constants/pointOfInterest';
+
 const clientPreloadedState = {
     user: {
         jwt: null,
         accountName: '',
         isLogIn: false
+    },
+    pointOfInterestCreationWindow: {
+        opened: false,
+        widgetSelected: NONE,
+        data: null,
+        editMode: false
     }
 };
 const preloadedState = window.__PRELOADED_STATE__ || clientPreloadedState;
@@ -21,7 +29,7 @@ import './main.scss';
 
 render((
     <Provider store={store}>
-        <div>
+        <div style={{height: '100%'}} >
             <DevTools />
             <Router children={routes} history={browserHistory} />
         </div>

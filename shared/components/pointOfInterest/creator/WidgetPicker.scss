@@ -1,0 +1,43 @@
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.WidgetPicker {
+    padding: 10px;
+    div.module {
+        width: 50%;
+        padding: 10px;
+        border: 3px dashed $gray-lighter;
+        cursor: pointer;
+        &:hover {
+            border: 3px solid $brand-info;
+            div.icon-module {
+                border: 1px solid $brand-info;
+            }
+            span.module-label {
+                color: $brand-info;
+            }
+        }
+        div.icon-module {
+            background-color: $gray-lighter;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            color: white;
+            font-size: $font-size-h1;
+            text-align: center;
+            border: 1px dashed $gray-light;
+            margin: auto;
+            margin-top: 5px;
+            span.glyphicon {
+                top: 9px;
+            }
+        }
+        span.module-label {
+            margin: auto;
+            padding: 5px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

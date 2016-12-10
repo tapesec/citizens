@@ -32,7 +32,12 @@ const isomorphicMiddleware = function(req, res) {
                     accountName: req.session && req.session.accountName? req.session.accountName : null,
                     jwt: req.session? req.session.jwt : null
                 },
-                ...conversation
+                pointOfInterestCreationWindow: {
+                    opened: false,
+                    widgetSelected: 'NONE',
+                    data: null,
+                    editMode: false
+                }
             };
             const loggerMiddleware = createLogger();
             const store = createStore(reducer, preloadedState,
@@ -43,7 +48,7 @@ const isomorphicMiddleware = function(req, res) {
 
             var content = ReactDOMServer.renderToString(
                 <Provider store={store}>
-                    <div>
+                    <div style={{ height: '100%' }}>
                         <DevTools />
                         <RouterContext {...props}/>
                     </div>

@@ -1,6 +1,7 @@
 export default {
     isLogIn,
-    getAccountName
+    getAccountName,
+    get
 };
 
 function isLogIn(state) {
@@ -8,7 +9,10 @@ function isLogIn(state) {
 }
 
 function getAccountName(state) {
-
     let accountName = Boolean(state.user.accountName)? state.user.accountName : null;
     return accountName;
+}
+
+function get(state) {
+    return state.user;
 }

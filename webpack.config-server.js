@@ -21,6 +21,7 @@ module.exports = {
     devtool: 'source-map',
     externals: nodeModules,
     entry: [
+        'babel-polyfill',
         SERVER + '/app.js',
     ],
     output: {

@@ -4,7 +4,8 @@ import * as constant from '../constants/';
 export default {
     postCredentials,
     requestLogout,
-    getConversation
+    getConversation,
+    newInformationPanel
 };
 
 function postCredentials(credentials) {
@@ -34,6 +35,18 @@ function getConversation() {
     return new Promise(function(resolve, reject) {
         request
             .get(constant.MESSAGES)
+            .end((err) => {
+                if (err) reject(err);
+                else resolve();
+            });
+    });
+}
+
+function newInformationPanel(payload) {
+    return new Promise((resolve, reject) => {
+        request
+            .post(constant.WIDGET_INFORMATION_PANEL)
+            .send(payload)
             .end((err) => {
                 if (err) reject(err);
                 else resolve();

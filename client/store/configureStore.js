@@ -6,7 +6,7 @@ import redirectMiddleware from '../middlewares/redirect';
 import reducer from '../reducers/';
 import DevTools from '../../shared/containers/DevTools';
 
-import { userSaga } from '../sagas/user';
+import { init } from '../sagas/';
 
 const loggerMiddleware = createLogger();
 
@@ -28,7 +28,7 @@ export default function configureStore(preloadedState) {
         )
     );
     //console.log(store, 'store');
-    sagaMiddleware.run(userSaga);
+    sagaMiddleware.run(init);
 
     // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
     if (module.hot) {

@@ -1,0 +1,28 @@
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "./node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+.MapContainer {
+    height: 100%;
+    @include make-md-column(9);
+    padding: 0;
+}
+
+
+/** animation for POI creation container **/
+.POICreationWindow-enter {
+    left: -33%;
+}
+
+.POICreationWindow-enter.POICreationWindow-enter-active {
+    left: 0;
+    transition: left 500ms, ease-in;
+}
+
+.POICreationWindow-leave {
+    left: 0;
+}
+
+.POICreationWindow-leave.POICreationWindow-leave-active {
+    left: -33%;
+    transition: left 300ms, ease-in;
+}

@@ -1,6 +1,6 @@
 import co from 'co';
 
-import MsgConnector from '../connector/Messages.js';
+import MsgConnector from '../bdd-connector/Messages.js';
 
 class MessageCtrl {
 

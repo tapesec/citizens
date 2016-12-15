@@ -1,14 +1,16 @@
 import co from 'co';
 
-import UserConnector from '../connector/User.js';
+import { User } from '../bdd-connector/';
 
 class UserCtrl {
 
     static get(req, res, next) {
         co(function *() {
             try {
-                const user = yield new UserConnector().get(req.query);
-                res.status(200).send(user);
+                const user = yield User.get(req.query);
+                if (!user) {
+                    res.status(204).end();
+                } else res.send(user);
             } catch (err) {
                 console.log(err, 'sdsd');
                 next(err);

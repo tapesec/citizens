@@ -1,13 +1,13 @@
 import co from 'co';
 
-import InfoConnector from '../connector/Information.js';
+import { save } from '../bdd-connector/Information.js';
 
 class InformationCtrl {
 
     static writeInformation(req, res, next) {
         co(function *() {
             try {
-                yield new InfoConnector().save(req.body);
+                yield save(req.body);
                 res.status(201).send();
             } catch (err) {
                 next(err);

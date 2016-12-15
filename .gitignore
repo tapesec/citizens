@@ -35,3 +35,10 @@ npm-debug.log
 server/public
 build
 dump.rdb
+.gitignore
+app.js
+bin/
+package.json
+public/
+routes/
+.idea

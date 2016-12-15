@@ -1,20 +1,17 @@
-var jwt = require('jsonwebtoken');
-var konsole = require('./utils/CustomLog');
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var redis = require('connect-redis');
-var RedisStore = redis(session);
-var bodyParser = require('body-parser');
-// var passport = require('passport');
-// var JwtStrategy = require('passport-jwt').Strategy
-// ,   ExtractJwt = require('./authentications/sessionExctractor');
-import * as constant from './../shared/constants/';
+const konsole = require('./utils/CustomLog');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const redis = require('connect-redis');
+const RedisStore = redis(session);
+const bodyParser = require('body-parser');
 
-var controller = require('./controller/');
+import * as constant from './../shared/constants/';
+const controller = require('./controller/');
+import UserCtrl from './controller/user';
 
 // passport.use(new JwtStrategy({
 //     jwtFromRequest: ExtractJwt.fromSession,
@@ -26,7 +23,7 @@ var controller = require('./controller/');
 //     done(null, { name: 'lionnel'});
 // }));
 
-var app = express();
+const app = express();
 
 app.use(cookieParser());
 app.use(session({
@@ -76,17 +73,7 @@ app.get(['/', constant.SIGN_IN, constant.MAIN_PAGE], function(req, res, next) {
     }
 });
 
-app.post(constant.AUTH, (req, res) => {
-    var token = jwt.sign(req.body, 'lasalle');
-    req.session.jwt = token;
-    req.session.accountName = 'lasalle';
-    req.session.isLogIn = true;
-    res.status(201).send({
-        jwt: token,
-        isLogIn: true,
-        accountName: 'lasalle'
-    });
-});
+app.post(constant.AUTH, UserCtrl.get);
 
 app.get(constant.LOGOUT, (req, res) => {
     req.session.destroy((err) => {
@@ -103,7 +90,7 @@ app.get(['/', constant.SIGN_IN, constant.MAIN_PAGE], controller);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    const err = new Error('Not Found');
     err.status = 404;
     next(err);
 });

@@ -21,10 +21,11 @@ function* newInformationPanel(action) {
             user,
             ...action.payload,
         };
-        const savedInformationPanel = yield call(Api.newInformationPanel, payload);
+        const savedInformationPanel = yield call(Api.newInformationPanel, payload, user.jwt);
         yield put({ type: INFORMATION_PANEL_CREATION_SAVE_ON_SUCCESS, savedInformationPanel });
         yield put({ type: CLOSE_POI_CREATION_WINDOW });
     } catch (err) {
+        console.log(err, 'err');
         yield put({ type: INFORMATION_PANEL_CREATION_SAVE_ON_ERROR });
     }
 }

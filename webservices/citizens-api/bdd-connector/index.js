@@ -1,7 +1,10 @@
-export default {
-    User,
-    Information
-};
+const User = require('./User.js');
+const Information = require('./Information.js');
+const POI = require('./POI.js');
 
-import User from './User.js';
-import Information from './Information.js';
+
+module.exports = {
+    User,
+    Information,
+    POI
+};

@@ -28,41 +28,5 @@
             "NODE_ENV": "development",
             "DEBUG_LVL": 2
         }
-    },
-    {
-        "name"        : "Informations-MS",
-        "script"      : "webservices/informations/bin/www",
-        "port": 3003,
-        "watch": "webservices/informations/build",
-        "args": "--harmony",
-        "exec_mode"  : "fork_mode",
-        "env": {
-            "NODE_ENV": "development",
-            "DEBUG_LVL": 2
-        }
-    },
-    {
-        "name"        : "Users-MS",
-        "script"      : "webservices/users/bin/www",
-        "port": 3004,
-        "watch": "webservices/users/",
-        "args": "--harmony",
-        "exec_mode"  : "fork_mode",
-        "env": {
-            "NODE_ENV": "development",
-            "DEBUG_LVL": 2
-        }
-    },
-    {
-        "name"        : "POI-MS",
-        "script"      : "webservices/POI/bin/www",
-        "port": 3005,
-        "watch": "webservices/POI/build",
-        "args": "--harmony",
-        "exec_mode"  : "fork_mode",
-        "env": {
-            "NODE_ENV": "development",
-            "DEBUG_LVL": 2
-        }
     }]
 }

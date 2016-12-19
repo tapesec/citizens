@@ -11,6 +11,7 @@ export default function user(state={}, action) {
         newState.accountName = null;
         newState.jwt = null;
         newState.isLogIn = false;
+        newState._id = null;
         return newState;
     }
     default:

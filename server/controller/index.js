@@ -30,7 +30,8 @@ const isomorphicMiddleware = function(req, res) {
                 user: {
                     isLogIn: req.session && req.session.jwt? true : false,
                     accountName: req.session && req.session.accountName? req.session.accountName : null,
-                    jwt: req.session? req.session.jwt : null
+                    jwt: req.session? req.session.jwt : null,
+                    _id: req.session? req.session._id : null
                 },
                 pointOfInterestCreationWindow: {
                     opened: false,

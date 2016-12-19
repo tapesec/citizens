@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 let favicon = require('serve-favicon');
 const logger = require('morgan');
-const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -13,7 +12,7 @@ var passport = require('passport');
 let routes = require('./routes/index');
 const users = require('./routes/users');
 const messages = require('./routes/messages');
-const informations = require('./routes/informations');
+const POI = require('./routes/POI');
 import SocketManager from './real_time/SocketManager';
 const socketManager = new SocketManager();
 
@@ -25,7 +24,7 @@ const socketMiddleware = (req, res, next) => {
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const port = process.env.PORT || '3001';
+const port = process.env.PORT || '3002';
 app.set('port', port);
 server.listen(port, () => console.log(`Api started on port ${port}!`));
 
@@ -39,8 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(socketMiddleware);
 
 app.use('/messages', messages);
-app.use('/users', function(req, res, next) { console.log('ALORS ?'); next(); }, users);
-app.use('/informations', informations);
+app.use('/users', users);
+app.use('/POI', POI);
 
 
 // catch 404 and forward to error handler

@@ -1,5 +1,4 @@
 import request from 'superagent';
-import _ from 'lodash';
 
 import * as constant from '../constants/';
 
@@ -7,8 +6,7 @@ export default {
     postCredentials,
     requestLogout,
     getConversation,
-    newInformationPanel,
-    checkRegisteredUser
+    newInformationPanel
 };
 
 function postCredentials(credentials) {
@@ -51,30 +49,9 @@ function newInformationPanel(payload, jwt) {
             .post(`http://localhost:3002${constant.WIDGET_INFORMATION_PANEL}`)
             .set('Authorization', `Bearer ${jwt}`)
             .send(payload)
-            .end((err) => {
-                if (err) reject(err);
-                else resolve();
-            });
-    });
-}
-
-
-
-// call from server..
-function checkRegisteredUser(credentials) {
-    return new Promise((resolve, reject) => {
-         request
-            .get(`http://localhost:3002${constant.USER_MS}`)
-            .query(credentials)
             .end((err, res) => {
-                if (err) reject(`checkRegistered: ${err.message}`);
-                else {
-                    console.log('vide !!!', res.body);
-                    if (_.isEmpty(res.body)) {
-                        console.log('bla');
-                        resolve(null);
-                    } else resolve(res.body);
-                }
+                if (err) reject(err);
+                else resolve(res.body);
             });
     });
 }

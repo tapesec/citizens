@@ -1,6 +1,6 @@
 import co from 'co';
 
-import { User } from '../bdd-connector/';
+const User = require('../bdd-connector/').User;
 
 class UserCtrl {
 
@@ -8,8 +8,9 @@ class UserCtrl {
         co(function *() {
             try {
                 const user = yield User.get(req.query);
+                console.log(user, 'user in api');
                 if (!user) {
-                    res.status(204).end();
+                    res.status(401).end();
                 } else res.send(user);
             } catch (err) {
                 console.log(err, 'sdsd');

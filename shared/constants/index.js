@@ -18,7 +18,7 @@ export const MAIN_PAGE = '/dashboard';
 // ressources paths
 export const AUTH = '/auth';
 export const LOGOUT = '/logout';
-export const WIDGET_INFORMATION_PANEL = '/informations';
+export const WIDGET_INFORMATION_PANEL = '/POI/informations';
 
 // Micro Services
 export const MESSAGES = '/messages';

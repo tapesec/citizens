@@ -14,18 +14,19 @@ function* newInformationPanel(action) {
 
     try {
         const user = yield select(User.get);
-        const coords = yield select(POI.getCreationWindowData).coords;
+        const pointOfInterestCreationWindow = yield select(POI.getCreationWindowData);
         let payload = {
-            time: new Date().getTime(),
-            coords,
+            POI: {
+                time: new Date().getTime(),
+                coords: pointOfInterestCreationWindow.data.coords
+            },
             user,
-            ...action.payload,
+            information: action.payload
         };
         const savedInformationPanel = yield call(Api.newInformationPanel, payload, user.jwt);
         yield put({ type: INFORMATION_PANEL_CREATION_SAVE_ON_SUCCESS, savedInformationPanel });
         yield put({ type: CLOSE_POI_CREATION_WINDOW });
     } catch (err) {
-        console.log(err, 'err');
         yield put({ type: INFORMATION_PANEL_CREATION_SAVE_ON_ERROR });
     }
 }

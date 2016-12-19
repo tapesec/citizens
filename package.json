@@ -11,7 +11,7 @@
     "eslint": "./node_modules/.bin/eslint --config .eslintrc.json 'client/**' 'shared/**' 'server/**'"
   },
   "dependencies": {
-    "async": "^2.0.1",
+    "async": "^2.1.4",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "better-console": "^0.2.4",
@@ -43,6 +43,7 @@
     "morgan": "~1.7.0",
     "no-favicon": "0.0.1",
     "node-noop": "^1.0.0",
+    "normalizr": "^2.3.0",
     "pg": "^6.1.0",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.4.1",

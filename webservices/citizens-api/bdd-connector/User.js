@@ -2,7 +2,7 @@ import db from '../bdd.js';
 
 const users = db.get('users');
 
-export default {
+module.exports = {
     save,
     get
 };
@@ -13,4 +13,9 @@ function save(data) {
 
 function get(query) {
     return users.findOne(query);
+}
+
+function getAll(params={}) {
+    const query = { ...params, removed: false };
+    return users.find(query);
 }
